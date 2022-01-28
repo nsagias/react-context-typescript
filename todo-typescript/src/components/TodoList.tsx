@@ -1,8 +1,8 @@
-const Todo: React.FC = () => {
+const TodoList: React.FC = () => {
   return (
     <div>
       <h1>Todo</h1>
     </div>
   );
 }
-export default Todo;
+export default TodoList;
