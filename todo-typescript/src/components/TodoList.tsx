@@ -1,4 +1,7 @@
-const TodoList: React.FC<{items: string[]}> = (props) => {
+
+import Todo from "../models/todo";
+
+const TodoList: React.FC<{items: Todo[]}> = (props) => {
   return (
     <div>
       <ul>
