@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 
 interface IhandleSubmit {
   (event: React.FormEvent): void;
 } 
 
-const NewTodo: React.FC = (props) => {
+const NewTodo: React.FC = () => {
+
+  const todoTextInputRef = useRef();
 
   const handleSubmit: IhandleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
