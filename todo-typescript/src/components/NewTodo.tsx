@@ -13,6 +13,10 @@ const NewTodo: React.FC = () => {
     event.preventDefault();
 
     const enteredText = todoTextInputRef.current!.value;  
+
+    if (enteredText.trim().length === 0) {
+      return;
+    }
   };
 
   
