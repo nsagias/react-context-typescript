@@ -5,12 +5,12 @@ import Todo from './models/todo';
 function App() {
   const todos = [
     new Todo("Code"),
-    new Todo("code some more")
+    new Todo("Code some more")
   ];
 
   return (
     <div className="App">
-      <TodoList items={["get this done", "get it done yesterday"]}/>
+      <TodoList items={todos}/>
     </div>
   );
 }
