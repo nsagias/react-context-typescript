@@ -4,7 +4,7 @@ interface IHandleSubmit {
   (event: React.FormEvent): void;
 } 
 
-const NewTodo: React.FC = () => {
+const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
 
   const INPUTREF_DEFAULT = null;
   const todoTextInputRef = useRef<HTMLInputElement>(INPUTREF_DEFAULT);
@@ -17,6 +17,8 @@ const NewTodo: React.FC = () => {
     if (enteredText.trim().length === 0) {
       return;
     }
+
+    props.onAddTodo(enteredText);
   };
 
   
