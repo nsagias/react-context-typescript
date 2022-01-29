@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-interface IhandleSubmit {
+interface IHandleSubmit {
   (event: React.FormEvent): void;
 } 
 
@@ -9,9 +9,12 @@ const NewTodo: React.FC = () => {
   const INPUTREF_DEFAULT = null;
   const todoTextInputRef = useRef<HTMLInputElement>(INPUTREF_DEFAULT);
 
-  const handleSubmit: IhandleSubmit = (event: React.FormEvent) => {
+  const handleSubmit: IHandleSubmit= (event: React.FormEvent) => {
     event.preventDefault();
+
+    const enteredText = todoTextInputRef.current!.value;  
   };
+
   
   return  (
     <form onSubmit={handleSubmit}>
