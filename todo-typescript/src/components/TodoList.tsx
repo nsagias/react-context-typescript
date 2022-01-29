@@ -4,7 +4,7 @@ import TodoItem from "./TodoItem";
 
 import classes from "./TodoList.module.css";
 
-const TodoList: React.FC<{items: Todo[]; onDeleteTodo: () => void}> = (props) => {
+const TodoList: React.FC<{items: Todo[]; onDeleteTodo: (id: string) => void}> = (props) => {
   const {items} = props;
 
   return (

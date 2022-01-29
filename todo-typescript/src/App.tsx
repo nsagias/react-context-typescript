@@ -19,14 +19,16 @@ function App() {
     setTodos((currentTodos) =>  [...currentTodos, newTodo]);
   };
 
-  const deleteTodoHander = () => {
-
+  const deleteTodoHander = (todoId: string) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter(todo => todo.id !== todoId);
+    });
   };
 
   return (
     <div className="App">
       <NewTodo onAddTodo={addTodoHandler}/>
-      <TodoList items={todos} onDeleteTodo={}/>
+      <TodoList items={todos} onDeleteTodo={deleteTodoHander}/>
     </div>
   );
 }
