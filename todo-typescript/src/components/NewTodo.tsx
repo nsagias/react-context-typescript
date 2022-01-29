@@ -1,10 +1,12 @@
+import React from "react";
+
 interface IhandleSubmit {
-  (event: any): void;
+  (event: React.FormEvent): void;
 } 
 
 const NewTodo: React.FC = (props) => {
 
-  const handleSubmit: IhandleSubmit = (event) => {
+  const handleSubmit: IhandleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
   };
   
