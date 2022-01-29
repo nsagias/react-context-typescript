@@ -6,7 +6,8 @@ interface IhandleSubmit {
 
 const NewTodo: React.FC = () => {
 
-  const todoTextInputRef = useRef();
+  const INPUTREF_DEFAULT = null;
+  const todoTextInputRef = useRef<HTMLInputElement>(INPUTREF_DEFAULT);
 
   const handleSubmit: IhandleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -15,7 +16,7 @@ const NewTodo: React.FC = () => {
   return  (
     <form onSubmit={handleSubmit}>
       <label htmlFor="text">Enter Todo:</label>
-      <input type="text" id="text" />
+      <input type="text" id="text" ref={todoTextInputRef} />
       <button>Submit!</button>
     </form>
   );
