@@ -9,9 +9,13 @@ function App() {
     new Todo("Code some more")
   ];
 
+  const addTodoHandler = (todoText: string) => {
+
+  };
+
   return (
     <div className="App">
-      <NewTodo />
+      <NewTodo onAddTodo={addTodoHandler}/>
       <TodoList items={todos}/>
     </div>
   );
