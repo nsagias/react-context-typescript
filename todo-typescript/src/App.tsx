@@ -14,7 +14,9 @@ function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const addTodoHandler = (todoText: string) => {
-
+    const newTodo = new Todo(todoText);
+    
+    setTodos((currentTodos) =>  [...currentTodos, newTodo]);
   };
 
   return (
