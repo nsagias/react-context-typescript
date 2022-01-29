@@ -14,7 +14,7 @@ const TodoList: React.FC<{items: Todo[]; onDeleteTodo: (id: string) => void}> = 
         <TodoItem 
           key={item.id} 
           text={item.text} 
-          onDeleteTodo={props.onDeleteTodo}  
+          onDeleteTodo={props.onDeleteTodo.bind(null, item.id)}  
         /> 
       )}
         
