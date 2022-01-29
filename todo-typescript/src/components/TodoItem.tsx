@@ -3,7 +3,7 @@ import Todo from "../models/todo";
 const TodoItem: React.FC<{text: string}>= (props) => {
   return (
     <li>
-     {props.text  }
+     {props.text}
     </li>
   );
 };
