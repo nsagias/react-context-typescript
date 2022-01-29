@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 
+import classes from "./NewTodo.module.css";
+
 interface IHandleSubmit {
   (event: React.FormEvent): void;
 } 
@@ -23,7 +25,7 @@ const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
 
   
   return  (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={classes.form}>
       <label htmlFor="text">Enter Todo:</label>
       <input type="text" id="text" ref={todoTextInputRef} />
       <button>Submit!</button>
