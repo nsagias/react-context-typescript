@@ -10,7 +10,9 @@ const NewTodo: React.FC = (props) => {
   
   return  (
     <form onSubmit={handleSubmit}>
-
+      <label>Enter Todo:</label>
+      <input type="text" />
+      <button>Submit!</button>
     </form>
   );
 };
