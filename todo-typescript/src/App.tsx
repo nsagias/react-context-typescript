@@ -1,9 +1,7 @@
-import { useState } from "react";
-
 import './App.css';
 import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
-import Todo from './models/todo';
+
 
 
 function App() {
@@ -15,8 +13,8 @@ function App() {
 
   return (
     <div className="App">
-      <NewTodo onAddTodo={addTodoHandler}/>
-      <TodoList items={todos} onDeleteTodo={deleteTodoHander}/>
+      <NewTodo />
+      <TodoList/>
     </div>
   );
 }
