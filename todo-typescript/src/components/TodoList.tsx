@@ -1,9 +1,9 @@
 
-import Todo from "../models/todo";
+import React, { useContext } from "react";
+
 import TodoItem from "./TodoItem";
 import { TodosContext } from "../store/TodosContext";
 import classes from "./TodoList.module.css";
-import { useContext } from "react";
 
 const TodoList: React.FC = () => {
   const todosCtx = useContext(TodosContext);
