@@ -1,6 +1,7 @@
 import './App.css';
 import NewTodo from './components/NewTodo';
 import TodoList from './components/TodoList';
+import TodosContextProvider from './store/TodosContext';
 
 
 
@@ -12,10 +13,12 @@ function App() {
 
 
   return (
-    <div className="App">
-      <NewTodo />
-      <TodoList/>
-    </div>
+    <TodosContextProvider>
+      <div className="App">
+        <NewTodo />
+        <TodoList/>
+      </div>
+    </TodosContextProvider>
   );
 }
 
