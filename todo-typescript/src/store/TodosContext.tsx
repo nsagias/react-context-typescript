@@ -3,11 +3,11 @@ import Todo from "../models/todo";
 
 interface ITodoContext {
   items: Todo[];
-  addTodo: (todoText: string) => void;
+  addTodo: (text: string) => void;
   deleteTodo: (id: string) => void; 
 }
 
-const TodosContext = createContext<ITodoContext>({
+export const TodosContext = createContext<ITodoContext>({
   items: [],
   addTodo: () => {},
   deleteTodo: (id: string) => {}
@@ -15,7 +15,8 @@ const TodosContext = createContext<ITodoContext>({
 
 
 const TodosContextProvider: React.FC = (props) => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const INTITIAL_STATE: Todo[] = [];
+  const [todos, setTodos] = useState<Todo[]>(INTITIAL_STATE);
 
   const addTodoHandler = (todoText: string) => {
     const newTodo = new Todo(todoText);
@@ -43,4 +44,4 @@ const TodosContextProvider: React.FC = (props) => {
 };
 
 
-export default TodosContext;
+export default TodosContextProvider;

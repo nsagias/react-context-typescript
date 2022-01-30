@@ -11,19 +11,7 @@ function App() {
   //   new Todo("Code!"),
   //   new Todo("Code some more")
   // ];
-  const [todos, setTodos] = useState<Todo[]>([]);
 
-  const addTodoHandler = (todoText: string) => {
-    const newTodo = new Todo(todoText);
-    
-    setTodos((currentTodos) =>  [...currentTodos, newTodo]);
-  };
-
-  const deleteTodoHander = (todoId: string) => {
-    setTodos((prevTodos) => {
-      return prevTodos.filter(todo => todo.id !== todoId);
-    });
-  };
 
   return (
     <div className="App">
