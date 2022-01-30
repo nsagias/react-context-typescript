@@ -1,11 +1,13 @@
 
 import Todo from "../models/todo";
 import TodoItem from "./TodoItem";
-
+import { TodosContext } from "../store/TodosContext";
 import classes from "./TodoList.module.css";
+import { useContext } from "react";
 
 const TodoList: React.FC<{items: Todo[]; onDeleteTodo: (id: string) => void}> = (props) => {
-  const {items} = props;
+  const todosCtx = useContext(TodosContext);
+
 
   return (
     <ul className={classes.todos}>
