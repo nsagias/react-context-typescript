@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-
+import React, { useRef, useContext } from "react";
+import { TodosContext } from "../store/TodosContext";
 import classes from "./NewTodo.module.css";
 
 interface IHandleSubmit {
@@ -7,6 +7,7 @@ interface IHandleSubmit {
 } 
 
 const NewTodo: React.FC<{ onAddTodo: (text: string) => void }> = (props) => {
+  const todosCtx = useContext(TodosContext);
 
   const INPUTREF_DEFAULT = null;
   const todoTextInputRef = useRef<HTMLInputElement>(INPUTREF_DEFAULT);
